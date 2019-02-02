@@ -1,5 +1,5 @@
 # Deep Learning Portfolio
-Collection of various deep learning experiments with details and demos of results.
+Collection of various deep learning experiments with details and demos of results. Currently, the source code is kept private and only the results are published.
 
 1. [Autoencoders](#autoencoders)
 
@@ -11,7 +11,7 @@ Collection of various deep learning experiments with details and demos of result
 
 # Autoencoders
 ## Identity Autoencoder
-This is a convolutional identity autoencoder. It could be useful to evaluate the precision of feature representations and find the right spot between undercomplete and overcomplete representations to avoid overtraining and underperformance for the given data domain.
+Convolutional identity autoencoder. It could be useful to evaluate the precision of feature representations and find the right spot between undercomplete and overcomplete representations to avoid overtraining and underperformance for the given data domain.
 
 ### Details
 * *Training details*:
@@ -35,7 +35,7 @@ This is a convolutional identity autoencoder. It could be useful to evaluate the
 
 
 ## Denoiser Autoencoder
-This is a convolutional autoencoder. It removes noise from the input image. This can be useful e.g. for photos taken in the dark.
+Convolutional autoencoder. It removes noise from the input image. This can be useful e.g. for photos taken in the dark.
 
 ### Details
 * *Training details*:
@@ -61,7 +61,7 @@ This is a convolutional autoencoder. It removes noise from the input image. This
 
 
 ## Super-Resolution Autoencoder
-This is a convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling or more efficient rendering at a lower resolution.
+Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling or more efficient rendering at a lower resolution.
 
 ### Details
 * *Training details*:
