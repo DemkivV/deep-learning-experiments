@@ -3,11 +3,11 @@ Collection of various deep learning experiments with details and demos of result
 
 1. [Autoencoders](#autoencoders)
 
-    1.1 [Identity Autoencoder](#identity-autoencoder)
+    1.1 [Identity](#identity)
 
-    1.2 [Denoiser Autoencoder](#denoiser-autoencoder)
+    1.2 [Denoising](#denoising)
 
-    1.3 [Super-Resolution Autoencoder](#super-resolution-autoencoder)
+    1.3 [Super-Resolution](#super-resolution)
 
 # Autoencoders
 ## Identity
@@ -34,7 +34,7 @@ Convolutional identity autoencoder. It could be useful to evaluate the precision
 
 
 
-## Denoiser
+## Denoising
 Convolutional autoencoder. It removes noise from the input image. This can be useful e.g. for photos taken in the dark.
 
 ### Details
@@ -61,7 +61,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
 
 
 ## Super-Resolution
-Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling or more efficient rendering at a lower resolution.
+Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling, but also more efficient rendering at a lower original resolution.
 
 ### Details
 * *Training details*:
