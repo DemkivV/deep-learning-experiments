@@ -15,14 +15,16 @@ Convolutional identity autoencoder.
   * *Ground truth*: Same as input.
 
 #### Results
-* *Demo content*:
-  * Validation results (input and prediction).
-  * Animation Over the course of 20 training epochs.
+* *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input (= ground truth).
   * *Bottom row*: Prediction of the identity autoencoder.
 
+
+
 ![Animated ](autoencoder/identity/mnist/conv_autoencoder_20.gif)
+
+
 
 ### Denoiser Autoencoder
 Convolutional denoiser autoencoder.
@@ -38,18 +40,17 @@ Convolutional denoiser autoencoder.
   * *Ground truth*: Unaugmented input.
 
 #### Results
-* *Demo content*:
-  * Validation results (input and prediction).
-  * Animation Over the course of 20 training epochs.
-* *Content*:
-  * Validation results (input and prediction).
-  * Over the course of 20 training epochs.
+* *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
   * *Mid row*: Prediction of the denoiser autoencoder.
   * *Top row*: Ground truth.
 
+
+
 ![Animated ](autoencoder/denoiser/mnist/conv_autoencoder_20.gif)
+
+
 
 ### Super-Resolution Autoencoder
 Convolutional super-resolution autoencoder which quadruples the resolution of the input image.
@@ -65,15 +66,14 @@ Convolutional super-resolution autoencoder which quadruples the resolution of th
   * *Ground truth*: (28, 28, 1) original resolution of input image.
 
 #### Results
-* *Demo content*:
-  * Validation results (input and prediction).
-  * Animation Over the course of 20 training epochs.
-* *Content*:
-  * Validation results (input and prediction).
-  * Over the course of 20 training epochs.
+* *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
   * *Mid row*: Prediction of the denoiser autoencoder.
   * *Top row*: Ground truth.
 
+
+
 ![Animated ](autoencoder/super-resolution/mnist/conv_autoencoder_20.gif)
+
+
