@@ -1,6 +1,11 @@
 # Deeplearning Portfolio
 Collection of various deep learning experiments with details and demos of results.
 
+1. [Autoencoders](#autoencoders)
+1.1 [Identity Autoencoder](#identity-autoencoder)
+1.2 [Denoiser Autoencoder](#denoiser-autoencoder)
+1.3 [Super-Resolution Autoencoder](#super-resolution-autoencoder)
+
 ## Autoencoders
 ### Identity Autoencoder
 Convolutional identity autoencoder.
