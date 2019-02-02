@@ -1,4 +1,4 @@
-# Deeplearning Portfolio
+# Deep Learning Portfolio
 Collection of various deep learning experiments with details and demos of results.
 
 1. [Autoencoders](#autoencoders)
