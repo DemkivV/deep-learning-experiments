@@ -10,7 +10,7 @@ Collection of various deep learning experiments with details and demos of result
     1.3 [Super-Resolution Autoencoder](#super-resolution-autoencoder)
 
 # Autoencoders
-## Identity Autoencoder
+## Identity
 Convolutional identity autoencoder. It could be useful to evaluate the precision of feature representations and find the right spot between undercomplete and overcomplete representations to avoid overtraining and underperformance for the given data domain.
 
 ### Details
@@ -34,7 +34,7 @@ Convolutional identity autoencoder. It could be useful to evaluate the precision
 
 
 
-## Denoiser Autoencoder
+## Denoiser
 Convolutional autoencoder. It removes noise from the input image. This can be useful e.g. for photos taken in the dark.
 
 ### Details
@@ -60,7 +60,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
 
 
 
-## Super-Resolution Autoencoder
+## Super-Resolution
 Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling or more efficient rendering at a lower resolution.
 
 ### Details
