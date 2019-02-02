@@ -9,11 +9,11 @@ Collection of various deep learning experiments with details and demos of result
 
     1.3 [Super-Resolution Autoencoder](#super-resolution-autoencoder)
 
-## Autoencoders
-### Identity Autoencoder
+# Autoencoders
+## Identity Autoencoder
 Convolutional identity autoencoder.
 
-#### Details
+### Details
 * *Training details*:
   * *Training objective*: Reproduction of input after encoding it into a feature map.
   * *Loss function*: Mean squared error.
@@ -22,7 +22,7 @@ Convolutional identity autoencoder.
   * *Input*: (28, 28, 1) grayscale images of digits (MNIST dataset).
   * *Ground truth*: Same as input.
 
-#### Results
+### Results
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input (= ground truth).
@@ -34,10 +34,10 @@ Convolutional identity autoencoder.
 
 
 
-### Denoiser Autoencoder
+## Denoiser Autoencoder
 Convolutional denoiser autoencoder.
 
-#### Details
+### Details
 * *Training details*:
   * *Training objective*: Reproduction of input after encoding it into a feature map.
   * *Loss function*: Mean squared error.
@@ -47,7 +47,7 @@ Convolutional denoiser autoencoder.
     * *Augmentation*: With noise (preprocessed once before the training).
   * *Ground truth*: Unaugmented input.
 
-#### Results
+### Results
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
@@ -60,10 +60,10 @@ Convolutional denoiser autoencoder.
 
 
 
-### Super-Resolution Autoencoder
+## Super-Resolution Autoencoder
 Convolutional super-resolution autoencoder which quadruples the resolution of the input image.
 
-#### Details
+### Details
 * *Training details*:
   * *Training objective*: Upscale the input image to the quadruple resolution (double width and height).
   * *Loss function*: Mean squared error.
@@ -73,7 +73,7 @@ Convolutional super-resolution autoencoder which quadruples the resolution of th
     * *Augmentation*: Noise (preprocessed once before the training).
   * *Ground truth*: (28, 28, 1) original resolution of input image.
 
-#### Results
+### Results
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
