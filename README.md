@@ -1,5 +1,5 @@
 # Deep Learning Portfolio
-Collection of various deep learning experiments with details and demos of results. Currently, the source code is kept private and only the results are published.
+Collection of various deep learning experiments with details and demos of results. (Work in progress.)
 
 1. [Autoencoders](#autoencoders)
 
