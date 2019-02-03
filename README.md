@@ -26,7 +26,7 @@ Convolutional identity autoencoder. It could be useful to evaluate the precision
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input (= ground truth).
-  * *Bottom row*: Prediction of the identity autoencoder.
+  * *Bottom row*: Prediction.
 
 
 
@@ -51,7 +51,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
-  * *Mid row*: Prediction of the denoiser autoencoder.
+  * *Mid row*: Prediction.
   * *Top row*: Ground truth.
 
 
@@ -77,7 +77,7 @@ Convolutional autoencoder. It quadruples the resolution of the input image. This
 * *Content*: Validation results over the course of 20 training epochs.
 * *Layout*:
   * *Top row*: Input.
-  * *Mid row*: Prediction of the denoiser autoencoder.
+  * *Mid row*: Prediction.
   * *Top row*: Ground truth.
 
 
