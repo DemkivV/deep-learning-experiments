@@ -1,6 +1,8 @@
 # Deep Learning Portfolio
 Collection of various deep learning experiments with details and demos of results. (Work in progress.)
 
+Of course all demos consist of evaluation images that were never shown in training.
+
 1. [Autoencoders](#autoencoders)
 
     1.1 [Identity](#identity)
@@ -19,18 +21,27 @@ Convolutional identity autoencoder. It could be useful to evaluate the precision
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
 * *I/O*:
-  * *Input*: (28, 28, 1) grayscale images of digits (MNIST dataset).
+  * *Input*: Grayscale/color images.
   * *Ground truth*: Same as input.
 
 ### Results
-* *Content*: Validation results over the course of 20 training epochs.
-* *Layout*:
-  * *Top row*: Input (= ground truth).
-  * *Bottom row*: Prediction.
+Animation of validation results for first 25 epochs of training.
+
+
+#### MNIST Dataset
+![](autoencoder/identity/mnist/conv_autoencoder_25.gif)
 
 
 
-![Animated ](autoencoder/identity/mnist/conv_autoencoder_20.gif)
+
+#### Fashion MNIST Dataset
+![](autoencoder/identity/fashion_mnist/conv_autoencoder_25.gif)
+
+
+
+
+#### CIFAR-10 Dataset
+![](autoencoder/identity/cifar10/conv_autoencoder_25.gif)
 
 
 
@@ -43,20 +54,29 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
 * *I/O*:
-  * *Input*: (28, 28, 1) grayscale images of digits (MNIST dataset).
+  * *Input*: Grayscale/color images.
     * *Augmentation*: With noise (preprocessed once before the training).
   * *Ground truth*: Unaugmented input.
 
 ### Results
-* *Content*: Validation results over the course of 20 training epochs.
-* *Layout*:
-  * *Top row*: Input.
-  * *Mid row*: Prediction.
-  * *Top row*: Ground truth.
+Animation of validation results for first 25 epochs of training.
+
+
+#### MNIST Dataset
+![](autoencoder/denoiser/mnist/conv_autoencoder_25.gif)
 
 
 
-![Animated ](autoencoder/denoiser/mnist/conv_autoencoder_20.gif)
+
+#### Fashion MNIST Dataset
+![](autoencoder/denoiser/fashion_mnist/conv_autoencoder_25.gif)
+
+
+
+
+#### CIFAR-10 Dataset
+![](autoencoder/denoiser/cifar10/conv_autoencoder_25.gif)
+
 
 
 
@@ -69,19 +89,27 @@ Convolutional autoencoder. It quadruples the resolution of the input image. This
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
 * *I/O*:
-  * *Input*: (14, 14, 1) grayscale images of digits (MNIST dataset), downscaled from original size (28, 28, 1).
+  * *Input*: Grayscale/color image downscaled by factor 2.
     * *Augmentation*: Noise (preprocessed once before the training).
-  * *Ground truth*: (28, 28, 1) original resolution of input image.
+  * *Ground truth*: Original resolution of input image.
 
 ### Results
-* *Content*: Validation results over the course of 20 training epochs.
-* *Layout*:
-  * *Top row*: Input.
-  * *Mid row*: Prediction.
-  * *Top row*: Ground truth.
+Animation of validation results for first 25 epochs of training.
+
+
+#### MNIST Dataset
+![](autoencoder/superresolution/mnist/conv_autoencoder_25.gif)
 
 
 
-![Animated ](autoencoder/super-resolution/mnist/conv_autoencoder_20.gif)
+
+#### Fashion MNIST Dataset
+![](autoencoder/superresolution/fashion_mnist/conv_autoencoder_25.gif)
+
+
+
+
+#### CIFAR-10 Dataset
+![](autoencoder/superresolution/cifar10/conv_autoencoder_25.gif)
 
 
