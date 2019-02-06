@@ -5,9 +5,9 @@ Of course all demos consist of evaluation images that were never shown in traini
 
 1. [Deep Learning Experiments](#deep-learning-experiments)
 
-    1.1 [Identity](#identity)
+    1.1 [Identity Autoencoder](#identity-autoencoder)
 
-    1.2 [Denoising](#denoising)
+    1.2 [Denoiser](#denoiser)
 
     1.3 [Super-Resolution](#super-resolution)
 
@@ -19,7 +19,7 @@ Of course all demos consist of evaluation images that were never shown in traini
 
     2.2 [Fashion MNIST](#fashion-mnist)
 
-    2.3 [CIFAR10 and CIFAR100](#cifar10-and-cifar100)
+    2.3 [CIFAR-10 and CIFAR-100](#cifar-10-and-cifar-100)
 
     2.4 [Pixel-Based Classification](#pixel-based-classification)
 
@@ -55,6 +55,13 @@ Convolutional autoencoder. It could be useful to evaluate the precision of featu
 
 #### CIFAR-10 Dataset
 ![](deep_learning_experiments/cifar10/identity_25.gif)
+
+
+
+
+#### CIFAR-100 Dataset
+![](deep_learning_experiments/cifar100/identity_25.gif)
+
 
 
 
@@ -94,6 +101,8 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
 
 #### CIFAR-100 Dataset
 ![](deep_learning_experiments/cifar100/denoiser_25.gif)
+
+
 
 
 ## Super-Resolution
@@ -169,7 +178,7 @@ The dataset is provided by [Zalando's research group](https://github.com/zalando
 
 <!-- TODO: Add a few example images -->
 
-## CIFAR10 and CIFAR100
+## CIFAR-10 and CIFAR-100
 
 The CIFAR10 and CIFAR100 datasets are the next step forward. In contrast to the previous two datasets, which were grayscale, this one is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2^n, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. Those two datasets are very low resolution photographs. The CIFAR10 datasets consists of 10 classes while the CIFAR100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging, but still the training is done pretty fast, in 10–15 minutes with a decent GPU and shallow/simple architectures.
 
