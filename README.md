@@ -106,7 +106,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
 
 
 ## Super-Resolution
-Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling, but also more efficient rendering at a lower original resolution.
+Convolutional autoencoder. It quadruples the resolution of the input image. This can be useful e.g. for supersampling, but also for more efficient rendering at a lower original resolution.
 
 ### Details
 * *Training details*:
