@@ -156,7 +156,7 @@ Recap of my Master's thesis results, where I trained a [Fully Convolutional Dens
 
 This chapter is meant to provide a short introduction to different interesting datasets I used in my experiments.
 
-Regarding the licenses for my predicted images, they are of course licensed accordingly with the same license as the input data. Regarding my own images, they are unlicensed and free for any use, similar to [the Unlicense](http://unlicense.org/) philosophy. Though, I appreciate staring or mentioning this repository. Thanks. :smile:
+Regarding the licenses for my predicted images, they are of course licensed accordingly with the same license as the input data. Regarding my own images, they are unlicensed and free for any use, similar to [the Unlicense](http://unlicense.org/) philosophy. Though, I appreciate staring or mentioning this repository.
 
 <!-- add valid license for media similar to the Unlicense -->
 
