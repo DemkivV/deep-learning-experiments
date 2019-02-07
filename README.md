@@ -154,7 +154,7 @@ Recap of my Master's thesis results, where I trained a [Fully Convolutional Dens
 
 # Datasets
 
-This chapter is meant to provide a short introduction to different interesting datasets, their advantages and when it's appropriate to work with them. Since this chapter has some tutorial flavor, it will soon be revised and probably separated into an own tutorial and/or learning path, which I'll be extending while learning myself.
+This chapter is meant to provide a short introduction to different interesting datasets I used in my experiments.
 
 Regarding the licenses for my predicted images, they are of course licensed accordingly with the same license as the input data. Regarding my own images, they are unlicensed and free for any use, similar to [the Unlicense](http://unlicense.org/) philosophy. Though, I appreciate staring or mentioning this repository. Thanks. :smile:
 
