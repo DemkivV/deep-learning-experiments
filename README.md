@@ -202,7 +202,7 @@ The dataset is provided by [Zalando's research group](https://github.com/zalando
 
 #### Training Time
 
-As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
+Similar to the previous dataset, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
 
 
@@ -210,7 +210,7 @@ As with all mentioned very low resolution datasets, with a *GTX 1070* it took ro
 
 #### Introduction
 
-In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2^n, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.
+In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2<sup>n</sup>, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.
 
 <!-- TODO: Add a few example images -->
 
