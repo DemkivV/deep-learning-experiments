@@ -166,15 +166,11 @@ Regarding the licenses for my predicted images, they are of course licensed acco
 
 #### Introduction
 
-MNIST is the hello world of deep learning. The "*Hello World*" when experimenting with your first neural networks.  It's providing a total of 70'000 images. Since it's the image shape is very small with just (28, 28, 1), you can have the fastest (Computer Vision oriented) convolutional neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's a nice dataset to gather some experience with basic architecture elements and different architecture approaches.
+MNIST is the hello world of deep learning. The "*Hello World*" when experimenting with your first neural networks.  It's providing a total of 70'000 images. Since it's the image shape is very small with just (28, 28, 1), you can have the fastest (Computer Vision oriented) convolutional neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's a nice dataset to gather some experience with basic architecture elements and different architecture approaches. You can find more info on [the official website](http://yann.lecun.com/exdb/mnist/). According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within/through Keras and commonly used for deep learning introductions.
 
 #### Complexity
 
 Though, since the complexity of the data is fairly low, not everything that works here will work for more complex problems. Even a classification autoencoder could achieve here pretty good results, since the dataset consists of mostly black and white. Not a major motivation to learn the 254 shades of gray for the neural network.
-
-#### Licensing
-
-You can find more info on [the official website](http://yann.lecun.com/exdb/mnist/). According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within Keras and commonly used for deep learning introductions.
 
 #### Training Time
 
@@ -188,17 +184,13 @@ With a *GTX 1070* it took roughly 4–5min for 25 epochs. Though, improvements f
 
 #### Introduction
 
-Since MNIST is too simple, fashion MNIST is the next level of complexity. It is similar to the MNIST dataset. The only difference is, that instead of digits, you have 10 different types of clothing.
+Since MNIST is too simple, fashion MNIST is the next level of complexity. It is similar to the MNIST dataset. The only difference is, that instead of digits, you have 10 different types of clothing. The dataset is provided by [Zalando's research group](https://github.com/zalandoresearch/fashion-mnist). The dataset is licensed with the *MIT license*. It's also easily accessible within/through Keras and commonly used for deep learning introductions.
 
 <!-- TODO: Add a few example images -->
 
 #### Complexity
 
 While for MNIST, a neural network could achieve extraordinary results with just classifying every pixel either black or white, this dataset offers new challenges: Meaningful grayscale values and patterns.
-
-#### Licensing
-
-The dataset is provided by [Zalando's research group](https://github.com/zalandoresearch/fashion-mnist) and is licensed with the *MIT license*. It's also easily accessible within Keras and commonly used for deep learning introductions.
 
 #### Training Time
 
@@ -210,17 +202,13 @@ Similar to the previous dataset, with a *GTX 1070* it took roughly 5–6min for 
 
 #### Introduction
 
-In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2<sup>n</sup>, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.
+In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a shape of (32, 32, 3). Since the resolution is (2<sup>n</sup>, 2<sup>n</sup>, x), it's also easier to work with convolutions, since you have to take less care with paddings for deeper architectures (in contrast to the previous datasets). CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.  The licensing seems unspecified, but the images could be subject to copyright. It's also easily accessible within/through Keras and commonly used for deep learning introductions. 
 
 <!-- TODO: Add a few example images -->
 
 #### Complexity
 
 Real world photographs and thus a vast variability, colors (thus 3 input layers instead of just 1) and the slightly higher resolution make these datasets much more complex compared to the previous two.
-
-#### Licensing
-
-The licensing seems unspecified, but the images could be subject to copyright. As well as the previously mentioned datasets, it's also easily accessible within Keras and commonly used for deep learning introductions.
 
 #### Training Time
 
@@ -249,7 +237,7 @@ The Cityscapes is an oasis for more complex deep learning experiments. This data
 * [**Some scripts/tools**](https://github.com/mcordts/cityscapesScripts)
   * Among others: An [annotation tool](https://github.com/mcordts/cityscapesScripts/blob/master/cityscapesscripts/annotation/cityscapesLabelTool.py), with which you could create annotations e.g. for own data
 
-The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can request access on the [Cityscapes website](https://www.cityscapes-dataset.com/).
+The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can request access on the [Cityscapes website](https://www.cityscapes-dataset.com/). The dataset has a [custom license](https://www.cityscapes-dataset.com/license/), but – in short – it's free for non-commercial purposes.
 
 <!-- TODO: Add a few example images -->
 
@@ -258,10 +246,6 @@ The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can
 The images have a high resolution and thus give you the possibility to experiment with very deep, state-of-the-art convolutional neural network architectures. It also provides data to experiment with multimodal input (e.g. additional depth data vs. just RGB), segmentation, class hierarchies and more in real world conditions. This is the level of complexity scientific papers are written and state-of-the-art neural networks trained with. Highly recommended dataset.
 
 <!-- (TODO: specify exact resolution) -->
-
-#### Licensing
-
-The dataset has a [custom license](https://www.cityscapes-dataset.com/license/), but – in short – it's free for non-commercial purposes.
 
 #### Training Time
 
