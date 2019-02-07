@@ -1,9 +1,9 @@
-# Deep Learning Portfolio
+# Deep Learning Experiments
 Collection of various deep learning experiments with details and demos of results. (Work in progress.)
 
 Of course all demos consist of evaluation images that were never shown in training.
 
-1. [Deep Learning Experiments](#deep-learning-experiments)
+1. [Training Objectives](#training-objectives)
 
     1.1 [Identity Autoencoder](#identity-autoencoder)
 
@@ -25,7 +25,7 @@ Of course all demos consist of evaluation images that were never shown in traini
 
     
 
-# Deep Learning Experiments
+# Training Objectivess
 ## Identity Autoencoder
 Convolutional autoencoder. It could be useful to evaluate the precision of feature representations and find the right spot between undercomplete and overcomplete representations to avoid overtraining and underperformance for the given data domain.
 
@@ -164,35 +164,73 @@ Regarding the licenses for my predicted images, they are of course licensed acco
 
 ## MNIST
 
-MNIST is the hello world of deep learning. The "*Hello World*" when experimenting with your first neural networks.  It's providing a total of . Since it's only image with the size (28, 28, 1), you can have the fastest neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's nice dataset to gather some experience with basic architecture elements and different architectures. Though, since the problem is very simple, some strategies that work.
+#### Introduction
 
-Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info. According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within Keras and commonly used for deep learning introductions.
+MNIST is the hello world of deep learning. The "*Hello World*" when experimenting with your first neural networks.  It's providing a total of 70'000 images. Since it's the image shape is very small with just (28, 28, 1), you can have the fastest (Computer Vision oriented) convolutional neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's a nice dataset to gather some experience with basic architecture elements and different architecture approaches.
 
-As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
+#### Complexity
+
+Though, since the complexity of the data is fairly low, not everything that works here will work for more complex problems. Even a classification autoencoder could achieve here pretty good results, since the dataset consists of mostly black and white. Not a major motivation to learn the 254 shades of gray for the neural network.
+
+#### Licensing
+
+You can find more info on [the official website](http://yann.lecun.com/exdb/mnist/). According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within Keras and commonly used for deep learning introductions.
+
+#### Training Time
+
+With a *GTX 1070* it took roughly 4–5min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
 <!-- TODO: Add a few example images -->
+
+
 
 ## Fashion MNIST
 
-Since MNIST is too simple, fashion MNIST is the next level of complexity. It is similar to the MNIST dataset. The only difference is, that instead of digits, you have 10 different types of clothing. While for MNIST, a neural network could achieve extraordinary results with just classifying every pixel either black or white, this dataset offers new challenges: Meaningful grayscale values and patterns.
+#### Introduction
 
-The dataset is provided by [Zalando's research group](https://github.com/zalandoresearch/fashion-mnist) and is licensed with the *MIT license*. It's also easily accessible within Keras and commonly used for deep learning introductions.
-
-As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
+Since MNIST is too simple, fashion MNIST is the next level of complexity. It is similar to the MNIST dataset. The only difference is, that instead of digits, you have 10 different types of clothing.
 
 <!-- TODO: Add a few example images -->
 
+#### Complexity
+
+While for MNIST, a neural network could achieve extraordinary results with just classifying every pixel either black or white, this dataset offers new challenges: Meaningful grayscale values and patterns.
+
+#### Licensing
+
+The dataset is provided by [Zalando's research group](https://github.com/zalandoresearch/fashion-mnist) and is licensed with the *MIT license*. It's also easily accessible within Keras and commonly used for deep learning introductions.
+
+#### Training Time
+
+As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
+
+
+
 ## CIFAR-10 and CIFAR-100
 
-The CIFAR10 and CIFAR100 datasets are the next step forward. In contrast to the previous two datasets, which were grayscale, this one is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2^n, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. Those two datasets are very low resolution photographs. The CIFAR10 datasets consists of 10 classes while the CIFAR100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging.
+#### Introduction
 
-Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info. The licensing seems unspecified, but the images could be subject to copyright. As well as the previously mentioned datasets, it's also easily accessible within Keras and commonly used for deep learning introductions.
+In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a size of (32, 32, 3). Since the resolution is 2^n, it's also easier to work with convolutions, since you have to take less care with paddings, which is a little bit more tricky and restricting with the previous (28, 28, 1) shape. CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. This is were classification is becoming more challenging. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.
+
+<!-- TODO: Add a few example images -->
+
+#### Complexity
+
+Real world photographs and thus a vast variability, colors (thus 3 input layers instead of just 1) and the slightly higher resolution make these datasets much more complex compared to the previous two.
+
+#### Licensing
+
+The licensing seems unspecified, but the images could be subject to copyright. As well as the previously mentioned datasets, it's also easily accessible within Keras and commonly used for deep learning introductions.
+
+#### Training Time
 
 As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
 ## Cityscapes
 
-Big jump forward: The Cityscapes is an oasis for more complex deep learning experiments. How that you warmed up with some easy and fast-to-train architectures, it's time to level up! This dataset provides a huge array of different data and is especially suited for gathering experience with autonomous driving problems. Here's a list of the available data:
+#### Introduction
+
+The Cityscapes is an oasis for more complex deep learning experiments. This dataset provides a huge array of different data and is especially suited for gathering experience with autonomous driving problems. Here's a list of the available data:
 
 * **Binocular photographs**
   * From the perspective of the car hood
@@ -211,12 +249,20 @@ Big jump forward: The Cityscapes is an oasis for more complex deep learning expe
 * [**Some scripts/tools**](https://github.com/mcordts/cityscapesScripts)
   * Among others: An [annotation tool](https://github.com/mcordts/cityscapesScripts/blob/master/cityscapesscripts/annotation/cityscapesLabelTool.py), with which you could create annotations e.g. for own data
 
-The images have a high resolution and thus give you the possibility to experiment with very deep, state-of-the-art convolutional neural network architectures. You can also experiment with exploring advantages of multimodal input (e.g. additional depth data vs. just RGB), segmentation, class hierarchies and more. Highly recommended dataset.
-
-<!-- (TODO: specify exact resolution) -->
-
-The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can request access on the [Cityscapes website](https://www.cityscapes-dataset.com/). They have a [custom license](https://www.cityscapes-dataset.com/license/), but – in short – it's free for non-commercial purposes.
+The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can request access on the [Cityscapes website](https://www.cityscapes-dataset.com/).
 
 <!-- TODO: Add a few example images -->
 
-For my experiments with the *Fully Convolutional Densenets* and a *GTX 1070*, it took roughly 8–12h until results stagnated. Though, back then I worked with *Theano* and *Lasagne*, so not sure about the training time with today's *Keras* with *Tensorflow* backend. Probably in the same range though.
+#### Complexity
+
+The images have a high resolution and thus give you the possibility to experiment with very deep, state-of-the-art convolutional neural network architectures. It also provides data to experiment with multimodal input (e.g. additional depth data vs. just RGB), segmentation, class hierarchies and more in real world conditions. This is the level of complexity scientific papers are written and state-of-the-art neural networks trained with. Highly recommended dataset.
+
+<!-- (TODO: specify exact resolution) -->
+
+#### Licensing
+
+The dataset has a [custom license](https://www.cityscapes-dataset.com/license/), but – in short – it's free for non-commercial purposes.
+
+#### Training Time
+
+For my experiments with the *Fully Convolutional Densenets* and a *GTX 1070*, it took roughly 8–12h until results stagnated for half resolution input images. Though, back then I worked with *Theano* and *Lasagne*, so not sure about the training time with today's *Keras* with *Tensorflow* backend. Probably in the same range though. But could also be slower.
