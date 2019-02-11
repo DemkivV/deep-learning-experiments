@@ -193,9 +193,9 @@ Left to right, top to bottom:
 
 ### Evaluation Example for Walkable Areas
 
-An impressive global accuracy of 96.8% was achieved. The weakness of this classifier are blurred edge regions. Probably the results could be further improved with upscaled losses in those edge regions or adding the *EdgeNet* part from the *[S-Shape Network](http://dro.dur.ac.uk/25156/)* to the architecture.
+An impressive global accuracy of 96.8% was achieved for the classification of walkable areas. The weakness of this classifier are blurred edge regions. Probably the results could be further improved with upscaled losses in those edge regions or adding the *EdgeNet* part from the *[S-Shape Network](http://dro.dur.ac.uk/25156/)* to the architecture.
 
-*Note*: Training was done with RGB-D data here.
+*Note*: Training was done with RGB-D.
 
 ![](deep_learning_experiments/cityscapes/thesis/evaluation_walkable_error_analysis.png)
 
