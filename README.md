@@ -1,8 +1,6 @@
 # Deep Learning Experiments
 Collection of various deep learning experiments with details and demos of results. (Work in progress.)
 
-Of course all demos consist of evaluation images that were never shown in training.
-
 1. [Training Objectives](#training-objectives)
 
     1.1 [Identity Autoencoder](#identity-autoencoder)
@@ -148,9 +146,64 @@ Convolutional autoencoder. It quadruples the resolution of the input image. This
 
 ## Pixel-Based Classification
 
-*Coming soon*:
+Recap of my Master's thesis results from August 2017, where I trained a *[Fully Convolutional DenseNet](https://arxiv.org/abs/1611.09326)* for pixel-based classification with the Cityscapes dataset.
 
-Recap of my Master's thesis results, where I trained a [Fully Convolutional DenseNet](https://arxiv.org/abs/1611.09326) for pixel-based classification with the Cityscapes dataset.
+### Details
+
+- *Training details*:
+  - *Training objective*: Pixel-based classification for a wide array of classes as well as just walkable areas.
+  - *Architecture*: *[Fully Convolutional DenseNet](https://arxiv.org/abs/1611.09326)*.
+  - *Loss function*: Crossentropy, but ignores regions masked with void labels.
+  - *Tracked metric*: *mean intersection over union* (mIoU) for early stopping and plateau breaking.
+  - *Optimizer*: Adam.
+- *I/O*:
+  - *Input*: Color image concatenated with precomputed disparity image, downscaled by a factor of 8: (256, 128).
+    - *Augmentation*: Random horizontal flipping.
+    - *Training scope*: All finely annotated (left camera) images with corresponding disparity (~5000 images).
+    - *Validation splitting* (training, validation, test): 2472/500/503.
+  - *Ground truth*:
+    - For the broad classification experiment: Used all finely annotated
+      - *Note*: *"Broad"* in this context means all available classes
+    - For the walkable-only experiment: As for full spectrum, but summarized all walkable classes vs all others
+    - For the data type experiments: Also used HDR versions of the dataset
+    - For the depth experiments: Also used precomputed disparities of the Cityscapes dataset
+    - *Note*: Ground truth (GT) was downscaled as well by a factor of 8 to match the input resolution.
+      - Provided metrics in further experiments are valid for the comparison of prediction vs downscaled GT.
+      - With an upscaling of the given prediction via super-resolution to the original GT size, a comparison with the original resolution would probably result in similar accuracy scores.
+
+### Evaluation Video for Full Spectrum Classes and Walkable Areas
+
+Video for evaluation results after training for 100 epochs. Trained on RGB-D (concatenated layers). From my Master's thesis, which was finished in August 2017:
+
+[![valuation video](https://img.youtube.com/vi/zqiEovO-lGA/0.jpg)](https://www.youtube.com/watch?v=zqiEovO-lGA)
+
+Left to right, top to bottom:
+1. Input RGB images
+2. Input disparity images
+3. Evaluation results for full available class spectrum
+4. Evaluation results of FCD for walkable areas
+
+*Note*: Classification was done on a per-image basis. No tracking or sequence awareness, e.g. with LSTM units, involved.
+
+### Evaluation Example for Broad Classification
+
+![](deep_learning_experiments/cityscapes/thesis/evaluation_broad_classification.png)
+
+### Evaluation Example for Walkable Areas
+
+An impressive global accuracy of 96.8% was achieved. The weakness of this classifier are blurred edge regions. Probably the results could be further improved with upscaled losses in those edge regions or adding the *EdgeNet* part from the *[S-Shape Network](http://dro.dur.ac.uk/25156/)* to the architecture.
+
+*Note*: Training was done with RGB-D data here.
+
+![](deep_learning_experiments/cityscapes/thesis/evaluation_walkable_error_analysis.png)
+
+### Evaluation for Input Data Types
+
+Evaluated RGB (8 Bit) vs HDR (16 Bit), with and without additional precomputed disparity images for depth. Perhaps HDR performed slightly worse than RGB because of a vastly increased data entropy and a too small training dataset. In contrast, additional depth data always provided an advantage.
+
+![](deep_learning_experiments/cityscapes/thesis/evaluation_input_data_types.png)
+
+
 
 # Datasets
 
@@ -164,15 +217,15 @@ Regarding the licenses for my predicted images, they are of course licensed acco
 
 ## MNIST
 
-#### Introduction
+### Introduction
 
-MNIST is the hello world of deep learning. The "*Hello World*" when experimenting with your first neural networks.  It's providing a total of 70'000 images. Since it's the image shape is very small with just (28, 28, 1), you can have the fastest (Computer Vision oriented) convolutional neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's a nice dataset to gather some experience with basic architecture elements and different architecture approaches. You can find more info on [the official website](http://yann.lecun.com/exdb/mnist/). According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within/through Keras and commonly used for deep learning introductions.
+MNIST is the "*Hello World*" of deep learning. The perfect data to start experiments with your first neural networks.  It's providing a total of 70'000 images. Since it's the image shape is very small with just (28, 28, 1), you can have the fastest (Computer Vision oriented) convolutional neural network training possible. Given a decent GPU, you can finish training experiments within minutes. It's a nice dataset to gather some experience with basic architecture elements and different architecture approaches. You can find more info on [the official website](http://yann.lecun.com/exdb/mnist/). According to [this source](http://www.pymvpa.org/datadb/mnist.html), it's licensed with *Creative Commons Attribution-ShareAlike 3.0*. It's easily accessible within/through Keras and commonly used for deep learning introductions.
 
-#### Complexity
+### Complexity
 
-Though, since the complexity of the data is fairly low, not everything that works here will work for more complex problems. Even a classification autoencoder could achieve here pretty good results, since the dataset consists of mostly black and white. Not a major motivation to learn the 254 shades of gray for the neural network.
+Though, since the complexity of the data is fairly low, not everything that works here will work for more complex problems. Even a classification autoencoder could achieve here pretty good results, since the dataset consists of mostly black and white. Only little motivation to learn the other *254 shades of gray* for the neural network.
 
-#### Training Time
+### Training Time
 
 With a *GTX 1070* it took roughly 4–5min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
@@ -182,17 +235,17 @@ With a *GTX 1070* it took roughly 4–5min for 25 epochs. Though, improvements f
 
 ## Fashion MNIST
 
-#### Introduction
+### Introduction
 
 Since MNIST is too simple, fashion MNIST is the next level of complexity. It is similar to the MNIST dataset. The only difference is, that instead of digits, you have 10 different types of clothing. The dataset is provided by [Zalando's research group](https://github.com/zalandoresearch/fashion-mnist). The dataset is licensed with the *MIT license*. It's also easily accessible within/through Keras and commonly used for deep learning introductions.
 
 <!-- TODO: Add a few example images -->
 
-#### Complexity
+### Complexity
 
 While for MNIST, a neural network could achieve extraordinary results with just classifying every pixel either black or white, this dataset offers new challenges: Meaningful grayscale values and patterns.
 
-#### Training Time
+### Training Time
 
 Similar to the previous dataset, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
@@ -200,23 +253,23 @@ Similar to the previous dataset, with a *GTX 1070* it took roughly 5–6min for 
 
 ## CIFAR-10 and CIFAR-100
 
-#### Introduction
+### Introduction
 
 In contrast to the previous two datasets, which were grayscale, CIFAR-10/100 datasets is RGB and has a slightly higher resolution with a shape of (32, 32, 3). Since the resolution is (2<sup>n</sup>, 2<sup>n</sup>, x), it's also easier to work with convolutions, since you have to take less care with paddings for deeper architectures (in contrast to the previous datasets). CIFAR-100/100 consist of very low resolution photographs. The CIFAR-10 datasets consists of 10 classes while the CIFAR-100 dataset consists of 100 classes accordingly. Take a look at [the official website](http://yann.lecun.com/exdb/mnist/) for more info.  The licensing seems unspecified, but the images could be subject to copyright. It's also easily accessible within/through Keras and commonly used for deep learning introductions. 
 
 <!-- TODO: Add a few example images -->
 
-#### Complexity
+### Complexity
 
 Real world photographs and thus a vast variability, colors (thus 3 input layers instead of just 1) and the slightly higher resolution make these datasets much more complex compared to the previous two.
 
-#### Training Time
+### Training Time
 
 As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
 
 ## Cityscapes
 
-#### Introduction
+### Introduction
 
 The Cityscapes is an oasis for more complex deep learning experiments. This dataset provides a huge array of different data and is especially suited for gathering experience with autonomous driving problems. Here's a list of the available data:
 
@@ -241,12 +294,12 @@ The dataset is provided by Daimler AG, MPI Informatics and TU Darmstadt. You can
 
 <!-- TODO: Add a few example images -->
 
-#### Complexity
+### Complexity
 
 The images have a high resolution and thus give you the possibility to experiment with very deep, state-of-the-art convolutional neural network architectures. It also provides data to experiment with multimodal input (e.g. additional depth data vs. just RGB), segmentation, class hierarchies and more in real world conditions. This is the level of complexity scientific papers are written and state-of-the-art neural networks trained with. Highly recommended dataset.
 
 <!-- (TODO: specify exact resolution) -->
 
-#### Training Time
+### Training Time
 
-For my experiments with the *Fully Convolutional Densenets* and a *GTX 1070*, it took roughly 8–12h until results stagnated for half resolution input images. Though, back then I worked with *Theano* and *Lasagne*, so not sure about the training time with today's *Keras* with *Tensorflow* backend. Probably in the same range though. But could also be slower.
+For my experiments with the *Fully Convolutional Densenets* and a *GTX 1070*, it took roughly 8–12h until results stagnated for 1/8 resolution input images. Though, back then I worked with *Theano* and *Lasagne*, so not sure about the training time with today's *Keras* with *Tensorflow* backend. Perhaps it's in a similar range.
