@@ -189,11 +189,15 @@ Left to right, top to bottom:
 
 ### Evaluation Example for Broad Classification
 
+A global accuracy of 92.2% was achieved with a training for the classification of the whole available class spectrum (see legend of the plot below).
+
+*Note*: Training was done with RGB-D.
+
 ![](deep_learning_experiments/cityscapes/thesis/evaluation_broad_classification.png)
 
 ### Evaluation Example for Walkable Areas
 
-An impressive global accuracy of 96.8% was achieved for the classification of walkable areas. The weakness of this classifier are blurred edge regions. Probably the results could be further improved with upscaled losses in those edge regions or adding the *EdgeNet* part from the *[S-Shape Network](http://dro.dur.ac.uk/25156/)* to the architecture.
+A global accuracy of 96.8% was achieved with a training for the classification of walkable areas. Unfortunately, edge regions are blurry and the main weakness of this classifier. Probably the results could be further improved with upscaled losses in edge regions or adding the *EdgeNet* part from the *[S-Shape Network](http://dro.dur.ac.uk/25156/)* to the architecture.
 
 *Note*: Training was done with RGB-D.
 
