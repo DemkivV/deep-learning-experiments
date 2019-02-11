@@ -177,6 +177,8 @@ Video for evaluation results after training for 100 epochs. Trained on RGB-D (co
 
 [![valuation video](https://img.youtube.com/vi/zqiEovO-lGA/0.jpg)](https://www.youtube.com/watch?v=zqiEovO-lGA)
 
+<span style="color:gray">(*Click for redirection to YouTube*)</span>
+
 Left to right, top to bottom:
 1. Input RGB images
 2. Input disparity images
