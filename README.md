@@ -33,7 +33,7 @@ Convolutional autoencoder. It could be useful to evaluate the precision of featu
   * *Architecture*: Shallow UNet (depth 2) with additional vertical residual connections.
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
-* *I/O*:
+* *Data*:
   * *Input*: Grayscale/color images.
   * *Ground truth*: Same as input.
 
@@ -72,7 +72,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
   * *Architecture*: Shallow UNet (depth 2) with additional vertical residual connections.
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
-* *I/O*:
+* *Data*:
   * *Input*: Grayscale/color images.
     * *Augmentation*: Strong noise (preprocessed once before the training).
   * *Ground truth*: Unaugmented input.
@@ -112,7 +112,7 @@ Convolutional autoencoder. It quadruples the resolution of the input image. This
   * *Architecture*: Very shallow UNet (depth just 1) with additional vertical residual connections and additional upconvolution block.
   * *Loss function*: Mean squared error.
   * *Optimizer*: Adam.
-* *I/O*:
+* *Data*:
   * *Input*: Grayscale/color image downscaled by factor 2.
   * *Ground truth*: Original resolution of input image.
 
@@ -155,7 +155,7 @@ Recap of my Master's thesis results from August 2017, where I trained a *[Fully 
   - *Loss function*: Crossentropy, but ignores regions masked with void labels.
   - *Tracked metric*: *mean intersection over union* (mIoU) for early stopping and plateau breaking.
   - *Optimizer*: Adam.
-- *I/O*:
+- *Data*:
   - *Input*: Color image concatenated with precomputed disparity image, downscaled by a factor of 8: (256, 128).
     - *Augmentation*: Random horizontal flipping.
     - *Training scope*: All finely annotated (left camera) images with corresponding disparity (~5000 images).
@@ -196,11 +196,11 @@ A global accuracy of 96.8% was achieved with a training for the classification o
 
 ### Evaluation for Input Data Types
 
-Evaluated RGB (8 Bit) vs HDR (16 Bit), with and without additional precomputed disparity images for depth. Perhaps HDR performed slightly worse than RGB because of a vastly increased data entropy and a too small training dataset. In contrast, additional depth data always provided an advantage.
+Evaluated RGB (8 Bit per value) vs HDR (16 Bit per value), with and without additional precomputed disparity images for depth. Perhaps HDR performed slightly worse than RGB because of a vastly increased data entropy and a too small training dataset (regarding both, amount of images and used downscaled resolution). In contrast, additional depth always provided an advantage.
 
 ![](deep_learning_experiments/cityscapes/thesis/evaluation_input_data_types.png)
 
-
+<span style="color:gray">*Figure: Development of global accuracy (GA) for evaluation dataset over the course of 100 training epochs.*</span>
 
 # Datasets
 
