@@ -74,7 +74,7 @@ Convolutional autoencoder. It removes noise from the input image. This can be us
   * *Optimizer*: Adam.
 * *I/O*:
   * *Input*: Grayscale/color images.
-    * *Augmentation*: With strong noise (preprocessed once before the training).
+    * *Augmentation*: Strong noise (preprocessed once before the training).
   * *Ground truth*: Unaugmented input.
 
 ### Results
@@ -114,7 +114,6 @@ Convolutional autoencoder. It quadruples the resolution of the input image. This
   * *Optimizer*: Adam.
 * *I/O*:
   * *Input*: Grayscale/color image downscaled by factor 2.
-    * *Augmentation*: Noise (preprocessed once before the training).
   * *Ground truth*: Original resolution of input image.
 
 ### Results
@@ -177,15 +176,7 @@ Video for evaluation results after training for 100 epochs. Trained on RGB-D (co
 
 [![valuation video](https://img.youtube.com/vi/zqiEovO-lGA/0.jpg)](https://www.youtube.com/watch?v=zqiEovO-lGA)
 
-<span style="color:gray">(*Click for redirection to YouTube*)</span>
-
-Left to right, top to bottom:
-1. Input RGB images
-2. Input disparity images
-3. Evaluation results for full available class spectrum
-4. Evaluation results of FCD for walkable areas
-
-*Note*: Classification was done on a per-image basis. No tracking or sequence awareness, e.g. with LSTM units, involved.
+<span style="color:gray">(*Click image for redirection to YouTube. See video description for further details.*)</span>
 
 ### Evaluation Example for Broad Classification
 
