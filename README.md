@@ -1,5 +1,5 @@
 # Deep Learning Experiments
-Collection of various deep learning experiments with details and demos of results. (Work in progress.)
+Collection of various deep learning experiments with details and demos of results.
 
 1. [Training Objectives](#training-objectives)
 
@@ -262,7 +262,7 @@ Real world photographs and thus a vast variability, colors (thus 3 input layers 
 
 ### Training Time
 
-As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements for such simple tasks actually slowed down already after a few epochs.
+As with all mentioned very low resolution datasets, with a *GTX 1070* it took roughly 5–6min for 25 epochs. Though, improvements stagnated after just a few epochs.
 
 ## Cityscapes
 
